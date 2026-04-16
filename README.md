@@ -1,73 +1,63 @@
-# React + TypeScript + Vite
+# 📝 Xiao-A-Note (小 A 笔记)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+> 一个基于 Web 技术栈构建的多功能、现代化 Markdown 桌面笔记工具
 
-Currently, two official plugins are available:
+[![React](https://img.shields.io/badge/React-20232A?style=flat-square&logo=react&logoColor=61DAFB)](#)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=flat-square&logo=typescript&logoColor=white)](#)
+[![Vite](https://img.shields.io/badge/Vite-B73BFE?style=flat-square&logo=vite&logoColor=FFD62E)](#)
+[![Electron](https://img.shields.io/badge/Electron-47848F?style=flat-square&logo=electron&logoColor=white)](#)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=flat-square&logo=tailwind-css&logoColor=white)](#)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](#)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌟 项目简介
 
-## React Compiler
+**Xiao-A-Note** 是一款追求极致体验的 Markdown 桌面笔记应用。我们希望打破传统笔记工具的限制，通过极其灵活的**插件机制**与**主题系统**，让你能够自由地打造最适合自己的思考与写作环境。
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+借助 Electron 的能力，小 A 笔记完美运行在 Windows、macOS 和 Linux 上，同时依靠 React + Vite + Tailwind CSS 带来了无与伦比的流畅度与现代感。
 
-## Expanding the ESLint configuration
+## ✨ 核心特性
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- **✍️ 纯粹的 Markdown 体验**：专注于沉浸式写作，支持处理大体积文档而不卡顿。
+- **🔌 强大的插件架构**：内置完整的 `plugins` 生态系统，轻松扩展无限功能。
+- **🎨 深度的主题定制**：通过 `themes` 目录与 `theme.json`，轻松切换或编写符合你审美的界面外观。
+- **🖥️ 真正的桌面级应用**：底层采用 Electron 构建，支持本地文件系统直读、图片快捷管理与离线可用。
+- **⚡ 闪电般的响应速度**：告别臃肿，Vite 的加持让应用的启动与开发热更新如丝般顺滑。
+- **🛡️ 稳定与高工程化**：内置完整的 Vitest 测试体系和严格的 ESLint 代码规范，为代码健壮性保驾护航。
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🛠️ 技术栈选型
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- **渲染引擎**：React 18+
+- **应用骨架**：Electron
+- **开发语言**：TypeScript
+- **构建工具**：Vite
+- **样式方案**：Tailwind CSS / PostCSS
+- **测试框架**：Vitest
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+
+## 🚀 快速开始
+如果你想在本地运行或参与小 A 笔记的开发，请按照以下步骤操作：
+1. 环境准备
+确保已安装 Node.js (推荐 v18 及以上版本)
+建议使用 npm、yarn 或 pnpm。
+
+2. 获取代码
+```bash
+git clone https://github.com/gvvbj/xiao-a-note.git
+cd xiao-a-note
+```
+3. 安装依赖
+```bash
+npm install
+```
+4. 启动开发环境
+```bash
+# 同时启动 Vite 渲染服务与 Electron 主进程窗口
+npm run dev
+```
+5. 编译打包
+```bash
+# 构建生产环境代码并生成对应的系统安装包
+npm run build
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
