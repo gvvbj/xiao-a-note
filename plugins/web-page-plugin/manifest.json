@@ -1,0 +1,8 @@
+{
+  "id": "web-page-plugin",
+  "name": "页面文档视图",
+  "version": "1.0.0",
+  "description": "为 type: web-page 文档提供源码/页面双视图渲染能力。",
+  "author": "Xiao A Note Team",
+  "main": "index.js"
+}

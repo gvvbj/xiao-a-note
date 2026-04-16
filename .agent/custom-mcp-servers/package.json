@@ -1,0 +1,19 @@
+{
+  "name": "custom-mcp-servers",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "@cyanheads/git-mcp-server": "^2.6.5",
+    "@iflow-mcp/electron-mcp-server": "^1.5.0",
+    "@modelcontextprotocol/sdk": "^1.25.3",
+    "zod": "^4.3.6"
+  }
+}

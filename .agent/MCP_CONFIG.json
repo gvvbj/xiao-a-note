@@ -1,0 +1,18 @@
+{
+    "mcpServers": {
+        "memory-local": {
+            "command": "node",
+            "args": [
+                "e:/require/xiao-a-note/.agent/mcp-servers/src/memory/dist/index.js"
+            ]
+        },
+        "filesystem-local": {
+            "command": "node",
+            "args": [
+                "e:/require/xiao-a-note/.agent/mcp-servers/src/filesystem/dist/index.js",
+                "e:/require/xiao-a-note"
+            ]
+        }
+    },
+    "//_comment": "Copy the content above (mcpServers block) into your global MCP configuration file (e.g., claude_desktop_config.json or VS Code MCP settings)."
+}
