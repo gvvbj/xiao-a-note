@@ -44,7 +44,6 @@ test_file_*.md       # 测试生成的假文件
 .claude/
 ai-doc/
 !.agent/mcp-servers
-.agent/
 
 # ========================
 # 6. 编辑器和 IDE 配置
