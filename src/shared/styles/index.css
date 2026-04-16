@@ -1,0 +1,141 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap'); */
+/* [Phase 9] 本地字体声明 */
+@import url('./typography.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* 修复删除线样式 (防止被解析为类似 Code 的样式) */
+.cm-strikethrough {
+  text-decoration: line-through;
+  background-color: transparent !important;
+  font-family: inherit !important;
+  color: inherit;
+}
+
+@layer base {
+  :root {
+    /* 定义核心变量，还原图1的色调 */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --primary: 212 100% 50%;
+    /* 这里的蓝色 #007aff 就是你要的深蓝 */
+    --primary-foreground: 0 0% 98%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+    --border: 240 6% 90%;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --primary: 212 100% 50%;
+    --muted: 240 3.7% 15.9%;
+    --border: 240 3.7% 15.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply text-foreground;
+    font-family: 'Source Han Sans SC', 'Segoe UI', system-ui, sans-serif;
+    /* [Phase 9] 使用本地思源黑体，回退到系统字体 */
+    overflow: hidden;
+    /* 防止双滚动条 */
+  }
+}
+
+/* 还原图1的滚动条样式 */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-gray-300 rounded-full;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-400;
+}
+
+/* 标签页横向滚动条 - 恢复并美化 */
+.tabs-scrollbar {
+  overflow-x: auto !important;
+  scrollbar-width: thin !important;
+  /* Firefox */
+  scrollbar-color: rgba(156, 163, 175, 0.3) transparent !important;
+}
+
+/* Chrome/Safari/Webkit */
+.tabs-scrollbar::-webkit-scrollbar {
+  display: block !important;
+  height: 4px !important;
+  /* 很细的横向滚动条 */
+}
+
+.tabs-scrollbar::-webkit-scrollbar-thumb {
+  display: block !important;
+  background: rgba(156, 163, 175, 0.3) !important;
+  border-radius: 2px !important;
+}
+
+.tabs-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.5) !important;
+}
+
+.tabs-scrollbar::-webkit-scrollbar-track {
+  display: block !important;
+  background: transparent !important;
+}
+
+/* 强制编辑器滚动条使用自定义样式 */
+.cm-scroller::-webkit-scrollbar {
+  width: 10px !important;
+  height: 10px !important;
+  background: transparent !important;
+}
+
+.cm-scroller::-webkit-scrollbar-track {
+  background: transparent !important;
+}
+
+.cm-scroller::-webkit-scrollbar-thumb {
+  background-color: rgba(156, 163, 175, 0.5) !important;
+  /* bg-gray-400 equivalent */
+  border-radius: 5px !important;
+  border: 2px solid transparent !important;
+  background-clip: content-box !important;
+}
+
+.cm-scroller::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(107, 114, 128, 0.8) !important;
+  /* bg-gray-500 equivalent */
+}
+
+/* Dark mode scrollbar for editor */
+.dark .cm-scroller::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+.dark .cm-scroller::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.3) !important;
+}
+
+.draggable-region {
+  -webkit-app-region: drag;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}

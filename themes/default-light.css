@@ -1,0 +1,67 @@
+/**
+ * Default Light Theme - 默认浅色主题
+ * 
+ * [Phase 11 P4] 外部主题模板
+ * 
+ * 此文件定义了完整的 CSS 变量集，可作为自定义主题的模板。
+ * 变量名与 ThemeConstants.ts 保持一致。
+ */
+
+:root {
+    /* === 基础颜色 === */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    /* === 主色调 === */
+    --primary: 212 100% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    /* === 次要色 === */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* === 静音色 === */
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+
+    /* === 强调色 === */
+    --accent: 220 14% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    /* === 危险色 === */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* === 边框/输入 === */
+    --border: 240 6% 90%;
+    --input: 220 13% 91%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+
+    /* === 卡片/弹出层 === */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* === 自定义 UI 区域 === */
+    --sidebar-background: 240 5% 98%;
+    --sidebar-foreground: 215 20% 40%;
+    --sidebar-active: 0 0% 100%;
+    --sidebar-hover: 220 14% 95%;
+
+    --header-background: 0 0% 100%;
+    --header-foreground: 222 47% 11%;
+
+    --editor-background: 0 0% 100%;
+
+    /* === 表格专用 === */
+    --table-border: 220 13% 91%;
+    --table-header-bg: 220 14% 96%;
+    --table-header-fg: 220 9% 46%;
+    --table-row-hover: 220 14% 98%;
+
+    /* === 代码块专用 === */
+    --code-inline-bg: 220 14% 96%;
+    --code-inline-fg: 0 84% 60%;
+}

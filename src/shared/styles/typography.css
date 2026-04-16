@@ -1,0 +1,27 @@
+/**
+ * Typography - 本地字体声明
+ * 
+ * [Phase 9] 本地字体集成
+ * 
+ * 设计原则:
+ * - 离线优先: 字体文件存储在 public/fonts/，无需网络
+ * - 性能优化: 使用 swap 确保文本立即显示
+ */
+
+/* 思源黑体 - 常规 */
+@font-face {
+    font-family: 'Source Han Sans SC';
+    src: url('/fonts/SourceHanSansSC-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 思源黑体 - 中等 */
+@font-face {
+    font-family: 'Source Han Sans SC';
+    src: url('/fonts/SourceHanSansSC-Medium.otf') format('opentype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}

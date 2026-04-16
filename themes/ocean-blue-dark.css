@@ -1,0 +1,109 @@
+/**
+ * Ocean Blue Light Theme - 海洋蓝浅色主题
+ * 
+ * 一个清爽、护眼的蓝色调主题，适用于长时间阅读和写作。
+ * 遵循系统标准 HSL 变量规范。
+ */
+
+:root[data-theme='ocean-blue-dark'] {
+    /* === 基础颜色 (深海蓝统一风格) === */
+    --background: 215 35% 25%;
+    --foreground: 210 30% 92%;
+
+    /* === 主色调 === */
+    --primary: 212 100% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* === 次要色 === */
+    --secondary: 215 30% 30%;
+    --secondary-foreground: 210 30% 92%;
+
+    /* === 静音色 === */
+    --muted: 215 25% 28%;
+    --muted-foreground: 210 25% 65%;
+
+    /* === 强调色 === */
+    --accent: 200 60% 35%;
+    --accent-foreground: 210 30% 95%;
+
+    /* === 危险色 === */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* === 边框/输入 === */
+    --border: 215 30% 35%;
+    --input: 215 30% 32%;
+    --ring: 212 100% 55%;
+    --radius: 0.75rem;
+
+    /* === 卡片/弹出层 === */
+    --card: 215 35% 22%;
+    --card-foreground: 210 30% 92%;
+    --popover: 215 35% 20%;
+    --popover-foreground: 210 30% 92%;
+
+    /* === 自定义 UI 区域 === */
+
+    /* 侧边栏：保持深海蓝 */
+    --sidebar-background: 215 45% 15%;
+    --sidebar-foreground: 210 30% 90%;
+    --sidebar-active: 212 100% 50%;
+    --sidebar-hover: 215 40% 25%;
+
+    /* 标题栏：与主背景统一 */
+    --header-background: 215 35% 22%;
+    --header-foreground: 210 30% 92%;
+
+    /* 编辑器：略浅以便阅读 */
+    --editor-background: 215 30% 28%;
+
+    /* === 表格专用 === */
+    --table-border: 215 30% 35%;
+    --table-header-bg: 215 30% 25%;
+    --table-header-fg: 210 30% 85%;
+    --table-row-hover: 215 30% 30%;
+
+    /* === 代码块专用 === */
+    --code-inline-bg: 215 30% 30%;
+    --code-inline-fg: 200 80% 65%;
+
+    /* === 语法高亮变量 (自定义覆盖示例) === */
+    /* 编辑器文字 */
+    --editor-foreground: 0 0% 100%;
+
+    /* 标题 - 纯白色 (测试用) */
+    --syntax-h1: 0 0% 100%;
+    --syntax-h2: 0 0% 100%;
+    --syntax-h3: 0 0% 100%;
+    --syntax-h4: 0 0% 95%;
+    --syntax-h5: 0 0% 90%;
+    --syntax-h6: 0 0% 85%;
+
+    /* 文本样式 - 纯白色 (测试用) */
+    --syntax-bold: 0 0% 100%;
+    --syntax-italic: 0 0% 100%;
+    --syntax-strikethrough: 0 0% 70%;
+
+    /* 链接 - 海洋蓝 */
+    --syntax-link: 195 100% 60%;
+    --syntax-link-hover: 195 100% 75%;
+
+    /* 代码 - 柔和色彩 */
+    --syntax-code-keyword: 270 70% 70%;
+    --syntax-code-string: 150 60% 55%;
+    --syntax-code-number: 35 80% 60%;
+    --syntax-code-comment: 215 20% 55%;
+    --syntax-code-function: 190 80% 60%;
+    --syntax-code-variable: 330 65% 65%;
+    --syntax-code-operator: 210 25% 70%;
+
+    /* 引用块 */
+    --syntax-blockquote: 210 30% 75%;
+    --syntax-blockquote-border: 200 80% 55%;
+
+    /* 列表 */
+    --syntax-list-marker: 200 80% 60%;
+
+    /* 水平线 */
+    --syntax-hr: 215 25% 40%;
+}

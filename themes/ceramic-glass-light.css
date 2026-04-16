@@ -1,0 +1,106 @@
+/**
+ * Ceramic Glass (Light) - Refined
+ * 高级陶瓷毛玻璃主题 - 视觉精修版
+ */
+
+:root[data-theme="ceramic-glass-light"] {
+    /* --- 基础 HSL 颜色 --- */
+    --background: 0 0% 100% / 0.55;
+    --foreground: 220 20% 10%;
+
+    /* --- UI 区域颜色 --- */
+    --sidebar-background: 0 0% 100% / 0.25;
+    --header-background: 0 0% 100% / 0.2;
+    --popover: 0 0% 100% / 0.7;
+    --popover-foreground: 220 20% 12%;
+
+    --editor-foreground: 220 20% 10%;
+    --editor-background: transparent;
+
+    /* 主色调 - 蓝晶石 */
+    --primary: 210 100% 45%;
+    --primary-foreground: 0 0% 100%;
+
+    /* 边框与阴影 */
+    --border: 0 0% 100% / 0.8;
+    /* 白色亮边 */
+    --accent: 210 100% 45% / 0.08;
+}
+
+/* 1. 深度穿透 */
+[data-theme="ceramic-glass-light"] body,
+[data-theme="ceramic-glass-light"] #root,
+[data-theme="ceramic-glass-light"] .flex-col.h-screen {
+    background: transparent !important;
+}
+
+/* 2. 背景注入 (Soft Mesh) */
+[data-theme="ceramic-glass-light"] body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    background:
+        radial-gradient(at 10% 10%, hsla(210, 100%, 96%, 0.8) 0px, transparent 50%),
+        radial-gradient(at 90% 15%, hsla(230, 100%, 98%, 0.8) 0px, transparent 50%),
+        radial-gradient(at 85% 90%, hsla(190, 100%, 96%, 0.8) 0px, transparent 50%),
+        radial-gradient(at 15% 85%, hsla(250, 100%, 98%, 0.8) 0px, transparent 50%),
+        hsl(210, 20%, 98%);
+}
+
+/* 3. 毛玻璃滤镜 (超强磨砂感觉) */
+[data-theme="ceramic-glass-light"] header,
+[data-theme="ceramic-glass-light"] .sidebar-container,
+[data-theme="ceramic-glass-light"] .bg-popover {
+    backdrop-filter: blur(32px) saturate(200%) brightness(102%) !important;
+    -webkit-backdrop-filter: blur(32px) saturate(200%) brightness(102%) !important;
+    border: 1px solid hsla(0, 0%, 100%, 0.6) !important;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.03);
+}
+
+/* 4. 编辑器优化 */
+[data-theme="ceramic-glass-light"] .cm-editor {
+    background: transparent !important;
+}
+
+/* 5. 活动态细节 */
+[data-theme="ceramic-glass-light"] .bg-primary {
+    background: linear-gradient(135deg, hsla(210, 100%, 50%, 0.1), hsla(210, 100%, 40%, 0.05)) !important;
+    border: 1px solid hsla(210, 100%, 45%, 0.2);
+    color: var(--primary);
+    backdrop-filter: blur(4px);
+}
+
+/* 6. 代码块定制化增强 (Theme-Specific CodeBlocks) */
+[data-theme="ceramic-glass-light"] .cm-codeblock-header {
+    background-color: hsla(0, 0%, 100%, 0.4) !important;
+    border-radius: 12px 12px 0 0 !important;
+    /* 核心修复：移除 margin */
+    margin-top: 0 !important;
+    padding-top: 12px !important;
+    height: 52px !important;
+    border: 1px solid hsla(0, 0%, 0%, 0.05) !important;
+    border-bottom: none !important;
+}
+
+[data-theme="ceramic-glass-light"] .cm-codeblock-line::before {
+    background-color: hsla(0, 0%, 100%, 0.2) !important;
+    border-left: 1px solid hsla(0, 0%, 0%, 0.05) !important;
+    border-right: 1px solid hsla(0, 0%, 0%, 0.05) !important;
+}
+
+[data-theme="ceramic-glass-light"] .cm-codeblock-last {
+    border-radius: 0 0 12px 12px !important;
+    /* 核心修复：移除 margin */
+    margin-bottom: 0 !important;
+    padding-bottom: 24px !important;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+}
+
+[data-theme="ceramic-glass-light"] .cm-codeblock-last::before {
+    border-bottom: 1px solid hsla(0, 0%, 0%, 0.05) !important;
+    border-radius: 0 0 12px 12px !important;
+}

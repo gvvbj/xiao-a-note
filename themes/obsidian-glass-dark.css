@@ -1,0 +1,134 @@
+/**
+ * Obsidian Glass (Dark) - Refined
+ * 对标 glassmorphism_ui_mockup 的极致毛玻璃主题
+ * 
+ * 修改说明:
+ * 1. 移除了内核 bg-background 遮挡，实现真·穿透。
+ * 2. 增强了背景渐变的 Neon 感和模糊深度。
+ */
+
+:root[data-theme="obsidian-glass-dark"] {
+    /* --- 基础 HSL 颜色 --- */
+    --background: 240 10% 2% / 0.5;
+    /* 半透明背景，让 body 背景透出来 */
+    --foreground: 0 0% 100%;
+
+    /* --- UI 区域颜色 (毛玻璃支撑层) --- */
+    --sidebar-background: 240 10% 4% / 0.4;
+    --header-background: 240 10% 2% / 0.3;
+    --popover: 240 10% 10% / 0.8;
+    --popover-foreground: 0 0% 100%;
+
+    --editor-foreground: 0 0% 100%;
+    --editor-background: transparent;
+
+    /* 主色调 - 霓虹极光蓝 */
+    --primary: 190 100% 55%;
+    --primary-foreground: 0 0% 100%;
+
+    /* 边框与阴影 (发光感核心) */
+    --border: 0 0% 100% / 0.12;
+    --accent: 190 100% 55% / 0.2;
+    --accent-foreground: 190 100% 55%;
+
+    /* 语法高亮 (对标参考图高饱和度) */
+    --syntax-link: 190 100% 60%;
+    --syntax-blockquote-border: 190 100% 55%;
+}
+
+/* 1. 深度穿透修复 - 确保所有中间层都不携带背景色 */
+[data-theme="obsidian-glass-dark"] body,
+[data-theme="obsidian-glass-dark"] #root,
+[data-theme="obsidian-glass-dark"] .flex-col.h-screen {
+    background: transparent !important;
+}
+
+/* 2. 背景注入 (高对比度 Mesh Gradient) */
+[data-theme="obsidian-glass-dark"] body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -10;
+    background:
+        radial-gradient(at 20% 20%, hsla(280, 80%, 20%, 0.8) 0px, transparent 50%),
+        radial-gradient(at 80% 20%, hsla(190, 90%, 20%, 0.7) 0px, transparent 50%),
+        radial-gradient(at 80% 80%, hsla(240, 70%, 15%, 0.8) 0px, transparent 50%),
+        radial-gradient(at 20% 80%, hsla(320, 70%, 18%, 0.7) 0px, transparent 50%),
+        hsl(240, 10%, 3%);
+    filter: saturate(1.5);
+}
+
+/* 3. 极致毛玻璃化 (Blur 32px) */
+[data-theme="obsidian-glass-dark"] header,
+[data-theme="obsidian-glass-dark"] .sidebar-container,
+[data-theme="obsidian-glass-dark"] .bg-popover,
+[data-theme="obsidian-glass-dark"] .activity-bar {
+    backdrop-filter: blur(32px) saturate(160%) brightness(110%) !important;
+    -webkit-backdrop-filter: blur(32px) saturate(160%) brightness(110%) !important;
+    border: 0.5px solid var(--border) !important;
+    background-clip: padding-box;
+}
+
+/* 4. 修改 Tab 条和标题栏细节 */
+[data-theme="obsidian-glass-dark"] .border-b,
+[data-theme="obsidian-glass-dark"] .border-r {
+    border-color: var(--border) !important;
+}
+
+/* 5. 活动项高光感 */
+[data-theme="obsidian-glass-dark"] .bg-primary {
+    background: linear-gradient(135deg, hsla(190, 100%, 60%, 0.4), hsla(190, 100%, 40%, 0.2)) !important;
+    border: 1px solid hsla(190, 100%, 60%, 0.4);
+    box-shadow: 0 0 20px hsla(190, 100%, 55%, 0.2);
+}
+
+/* 6. 代码块定制化增强 (Theme-Specific CodeBlocks) */
+[data-theme="obsidian-glass-dark"] .cm-codeblock-header {
+    background-color: hsla(240, 10%, 12%, 0.6) !important;
+    backdrop-filter: blur(12px) !important;
+    border-radius: 12px 12px 0 0 !important;
+    /* 核心修复：移除 margin 改用 padding/height 撑开高度，确保 CM6 测量准确 */
+    margin-top: 0 !important;
+    padding-top: 12px !important;
+    height: 52px !important;
+    border: 0.5px solid hsla(0, 0%, 100%, 0.15) !important;
+    border-bottom: none !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="obsidian-glass-dark"] .cm-codeblock-line::before {
+    background-color: hsla(240, 10%, 8%, 0.4) !important;
+    border-left: 0.5px solid hsla(0, 0%, 100%, 0.15) !important;
+    border-right: 0.5px solid hsla(0, 0%, 100%, 0.15) !important;
+}
+
+[data-theme="obsidian-glass-dark"] .cm-codeblock-last {
+    border-radius: 0 0 12px 12px !important;
+    /* 核心修复：严禁使用 margin-bottom，改用物理占位的 padding-bottom */
+    margin-bottom: 0 !important;
+    padding-bottom: 24px !important;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="obsidian-glass-dark"] .cm-codeblock-last::before {
+    border-bottom: 0.5px solid hsla(0, 0%, 100%, 0.15) !important;
+    border-radius: 0 0 12px 12px !important;
+}
+
+[data-theme="obsidian-glass-dark"] .cm-codeblock-dot {
+    opacity: 0.8;
+    transform: scale(1.1);
+}
+
+[data-theme="obsidian-glass-dark"] .cm-codeblock-lang-input {
+    color: hsla(0, 0%, 100%, 0.8) !important;
+    font-weight: 500 !important;
+}
+
+[data-theme="obsidian-glass-dark"] .cm-codeblock-copy-btn:hover {
+    background-color: hsla(0, 0%, 100%, 0.1) !important;
+    backdrop-filter: blur(4px);
+}

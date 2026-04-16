@@ -1,0 +1,390 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * [Phase 11 P1] 主题系统标准化
+ * 
+ * 核心 CSS 变量定义 (遵循零硬编码原则)
+ * 变量名与 ThemeConstants.ts 保持一致
+ */
+
+@layer base {
+  :root {
+    /* === 基础颜色 === */
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    /* === 主色调 === */
+    --primary: 212 100% 50%;
+    --primary-foreground: 0 0% 98%;
+
+    /* === 次要色 === */
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222 47% 11%;
+
+    /* === 静音色 === */
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+
+    /* === 强调色 === */
+    --accent: 220 14% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    /* === 危险色 === */
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* === 边框/输入 === */
+    --border: 240 6% 90%;
+    --input: 220 13% 91%;
+    --ring: 222.2 84% 4.9%;
+    --radius: 0.5rem;
+
+    /* === 卡片/弹出层 === */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* === 自定义 UI 区域 === */
+    --sidebar-background: 240 5% 98%;
+    --sidebar-foreground: 215 20% 40%;
+    --sidebar-active: 0 0% 100%;
+    --sidebar-hover: 220 14% 95%;
+
+    --header-background: 0 0% 100%;
+    --header-foreground: 222 47% 11%;
+
+    --editor-background: 0 0% 100%;
+
+    /* === 表格专用 (Phase 11 新增) === */
+    --table-border: 220 13% 91%;
+    --table-header-bg: 220 14% 96%;
+    --table-header-fg: 220 9% 46%;
+    --table-row-hover: 220 14% 98%;
+
+    /* === 代码块专用 (Phase 11 新增) === */
+    --code-inline-bg: 220 14% 96%;
+    --code-inline-fg: 0 84% 60%;
+
+    /* === 语法高亮变量 (可选覆盖) === */
+    /* 编辑器文字 */
+    --editor-foreground: 240 10% 3.9%;
+
+    /* 标题 */
+    --syntax-h1: 222 47% 20%;
+    --syntax-h2: 222 47% 25%;
+    --syntax-h3: 222 47% 30%;
+    --syntax-h4: 222 47% 35%;
+    --syntax-h5: 222 47% 40%;
+    --syntax-h6: 222 47% 45%;
+
+    /* 文本样式 */
+    --syntax-bold: 222 47% 15%;
+    --syntax-italic: 222 40% 30%;
+    --syntax-strikethrough: 220 10% 50%;
+
+    /* 链接 */
+    --syntax-link: 212 100% 45%;
+    --syntax-link-hover: 212 100% 35%;
+
+    /* 代码 */
+    --syntax-code-keyword: 280 80% 50%;
+    --syntax-code-string: 140 60% 40%;
+    --syntax-code-number: 30 80% 50%;
+    --syntax-code-comment: 220 10% 50%;
+    --syntax-code-function: 200 80% 45%;
+    --syntax-code-variable: 340 70% 50%;
+    --syntax-code-operator: 220 15% 40%;
+
+    /* 引用块 */
+    --syntax-blockquote: 220 10% 40%;
+    --syntax-blockquote-border: 212 100% 50%;
+
+    /* 列表 */
+    --syntax-list-marker: 212 100% 50%;
+
+    /* 水平线 */
+    --syntax-hr: 220 13% 80%;
+  }
+
+  .dark {
+    /* === 基础颜色 (深色) === */
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    /* === 主色调 (深色) === */
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    /* === 次要色 (深色) === */
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    /* === 静音色 (深色) === */
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    /* === 强调色 (深色) === */
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    /* === 危险色 (深色) === */
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* === 边框/输入 (深色) === */
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+
+    /* === 卡片/弹出层 (深色) === */
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    /* === 自定义 UI 区域 (深色) === */
+    --sidebar-background: 222.2 84% 4.9%;
+    --sidebar-foreground: 215 20.2% 65.1%;
+    --sidebar-active: 217.2 32.6% 17.5%;
+    --sidebar-hover: 217.2 32.6% 12%;
+
+    --header-background: 222.2 84% 4.9%;
+    --header-foreground: 210 40% 98%;
+
+    --editor-background: 222.2 84% 4.9%;
+
+    /* === 表格专用 (深色) === */
+    --table-border: 217.2 32.6% 17.5%;
+    --table-header-bg: 217.2 32.6% 17.5%;
+    --table-header-fg: 210 40% 98%;
+    --table-row-hover: 217.2 32.6% 12%;
+
+    /* === 代码块专用 (深色) === */
+    --code-inline-bg: 217.2 32.6% 17.5%;
+    --code-inline-fg: 0 72% 65%;
+
+    /* === 语法高亮变量 (深色模式) === */
+    /* 编辑器文字 */
+    --editor-foreground: 210 40% 98%;
+
+    /* 标题 */
+    --syntax-h1: 210 40% 98%;
+    --syntax-h2: 210 35% 92%;
+    --syntax-h3: 210 30% 85%;
+    --syntax-h4: 210 25% 78%;
+    --syntax-h5: 210 20% 72%;
+    --syntax-h6: 210 15% 65%;
+
+    /* 文本样式 */
+    --syntax-bold: 210 40% 98%;
+    --syntax-italic: 210 30% 85%;
+    --syntax-strikethrough: 220 10% 60%;
+
+    /* 链接 */
+    --syntax-link: 212 100% 65%;
+    --syntax-link-hover: 212 100% 75%;
+
+    /* 代码 */
+    --syntax-code-keyword: 280 90% 70%;
+    --syntax-code-string: 140 70% 60%;
+    --syntax-code-number: 30 90% 65%;
+    --syntax-code-comment: 220 15% 55%;
+    --syntax-code-function: 200 90% 65%;
+    --syntax-code-variable: 340 80% 70%;
+    --syntax-code-operator: 220 20% 70%;
+
+    /* 引用块 */
+    --syntax-blockquote: 220 15% 70%;
+    --syntax-blockquote-border: 212 100% 60%;
+
+    /* 列表 */
+    --syntax-list-marker: 212 100% 60%;
+
+    /* 水平线 */
+    --syntax-hr: 220 20% 30%;
+  }
+}
+
+@layer utilities {
+  .katex * {
+    border-color: currentColor;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Source Han Sans CN', 'Microsoft YaHei', 'Segoe UI', system-ui, sans-serif;
+  }
+}
+
+/* === Electron 窗口拖拽 === */
+.app-region-drag {
+  -webkit-app-region: drag;
+}
+
+.no-drag {
+  -webkit-app-region: no-drag;
+}
+
+/* === 滚动条美化 === */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background-color: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 5px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background-color: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* === 编辑器排版 === */
+.prose {
+  max-width: 80ch !important;
+  margin: 0 auto;
+}
+
+/* === 表格样式 (使用 CSS 变量，零硬编码) === */
+.prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  margin: 1em 0;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid hsl(var(--table-border));
+}
+
+.prose th,
+.prose td {
+  padding: 10px 14px;
+  text-align: left;
+  border: 1px solid hsl(var(--table-border));
+}
+
+.prose th {
+  background-color: hsl(var(--table-header-bg));
+  font-weight: 600;
+  color: hsl(var(--table-header-fg));
+}
+
+.prose tbody tr:hover {
+  background-color: hsl(var(--table-row-hover));
+}
+
+/* === 代码块样式 (使用 CSS 变量，零硬编码) === */
+.prose pre {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.prose code {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.9em;
+}
+
+/* 行内代码 */
+.prose code:not(pre code) {
+  background-color: hsl(var(--code-inline-bg));
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: hsl(var(--code-inline-fg));
+}
+
+/* 代码块 */
+.prose pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+
+/* === 语法高亮样式 (使用 CSS 变量) === */
+/* 编辑器/预览区基础文字颜色 */
+.prose {
+  color: hsl(var(--editor-foreground, var(--foreground)));
+}
+
+/* 标题颜色 */
+.prose h1 {
+  color: hsl(var(--syntax-h1, var(--foreground)));
+}
+
+.prose h2 {
+  color: hsl(var(--syntax-h2, var(--foreground)));
+}
+
+.prose h3 {
+  color: hsl(var(--syntax-h3, var(--foreground)));
+}
+
+.prose h4 {
+  color: hsl(var(--syntax-h4, var(--foreground)));
+}
+
+.prose h5 {
+  color: hsl(var(--syntax-h5, var(--foreground)));
+}
+
+.prose h6 {
+  color: hsl(var(--syntax-h6, var(--foreground)));
+}
+
+/* 文本样式 */
+.prose strong,
+.prose b {
+  color: hsl(var(--syntax-bold, var(--foreground)));
+}
+
+.prose em,
+.prose i {
+  color: hsl(var(--syntax-italic, var(--foreground)));
+}
+
+.prose del,
+.prose s {
+  color: hsl(var(--syntax-strikethrough, var(--muted-foreground)));
+}
+
+/* 链接 */
+.prose a {
+  color: hsl(var(--syntax-link, var(--primary)));
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.prose a:hover {
+  color: hsl(var(--syntax-link-hover, var(--primary)));
+}
+
+/* 引用块 */
+.prose blockquote {
+  color: hsl(var(--syntax-blockquote, var(--muted-foreground)));
+  border-left: 4px solid hsl(var(--syntax-blockquote-border, var(--primary)));
+  padding-left: 1em;
+  margin: 1em 0;
+  font-style: italic;
+}
+
+/* 列表标记 */
+.prose ul li::marker,
+.prose ol li::marker {
+  color: hsl(var(--syntax-list-marker, var(--primary)));
+}
+
+/* 水平线 */
+.prose hr {
+  border: none;
+  border-top: 1px solid hsl(var(--syntax-hr, var(--border)));
+  margin: 2em 0;
+}

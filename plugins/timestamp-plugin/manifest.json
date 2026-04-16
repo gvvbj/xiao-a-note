@@ -1,0 +1,8 @@
+{
+    "id": "timestamp-plugin",
+    "name": "插入当前时间",
+    "version": "1.0.0",
+    "description": "在编辑器中快速插入当前时间戳。",
+    "author": "Xiao A Note Team",
+    "main": "index.js"
+}

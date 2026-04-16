@@ -1,0 +1,9 @@
+{
+  "id": "local-content-suggest",
+  "name": "文档内内容提示",
+  "version": "1.0.0",
+  "description": "根据当前文档已出现的词汇和行片段提供输入补全提示",
+  "author": "Codex",
+  "main": "index.js"
+}
+
