@@ -1,8 +1,0 @@
-{
-    "id": "common-utils",
-    "name": "Common Utilities",
-    "version": "1.0.0",
-    "description": "Provides shared services like Logger and utilities for other plugins.",
-    "author": "Xiao A Note Team",
-    "main": "index.js"
-}

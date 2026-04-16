@@ -18,16 +18,16 @@ node_modules/
 dist/
 dist-ssr/
 dist_electron/
-plugins/             # 编译后的插件产物目录 (源码在 src 中)
+plugins/             
 *.tsbuildinfo
 
 # ========================
 # 3. 临时资产与无需共享的文档
 # ========================
-Fonts/               # 临时存放字体的目录
-img/                 # 临时存放图片的目录
-docs/                # 本地临时文档
-temp_images/         # 运行时临时图片目录
+Fonts/               
+img/                 
+docs/                
+temp_images/         
 
 # ========================
 # 4. 测试报告与手动测试目录
@@ -35,14 +35,14 @@ temp_images/         # 运行时临时图片目录
 playwright-report/
 test-results/
 reports/
-test/                # 个人手动测试产生的临时目录 (保留正式的 tests/ 目录)
-test_file_*.md       # 测试生成的假文件
-
+test/                
+test_file_*.md       
 # ========================
 # 5. AI 与智能体相关临时文件
 # ========================
 .claude/
 ai-doc/
+.agent/
 !.agent/mcp-servers
 
 # ========================
